@@ -10,11 +10,42 @@ This script requires GNU `awk` which is available on most Linux distributions. Y
 brew install gawk
 ```
 
-## Usage
+## Installation
+
+Install the script using Homebrew
 
 ```bash
-./terraform-variable-sort.sh
+brew tap sculley/homebrew-formula
+brew install terraform-variable-sort
 ```
+
+## Usage
+
+### Homebrew
+
+```bash
+terraform-variable-sort
+```
+
+Specify a different file as the first argument.
+
+```bash
+terraform-variable-sort variables.tf
+```
+
+### Manual
+
+```bash
+curl -s https://raw.githubusercontent.com/sculley/terraform-variable-sort/main/terraform-variable-sort.sh | bash -s --
+```
+
+Specify a different file as the first argument.
+
+```bash
+curl -s https://raw.githubusercontent.com/sculley/terraform-variable-sort/main/terraform-variable-sort.sh | bash -s -- input.tf
+```
+
+Your file will be updated in place.
 
 ## License
 
@@ -23,3 +54,9 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ## Authors
 
 Module is maintained by [Sam Culley](https://github.com/sculley)
+
+## Acknowledgments
+
+The AWK script was taken from [Github Gist](https://gist.github.com/yermulnik/7e0cf991962680d406692e1db1b551e6)
+
+This script was adapted from [libre-devops/utils/tf-sort.sh](https://github.com/libre-devops/utils/blob/dev/scripts/terraform/tf-sort.sh)
